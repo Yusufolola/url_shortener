@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Manage Your Shortened URLs</h1>
+<form id="update-form">
+    <label for="short_url">Enter Your Short URL:</label>
+    <input type="text" id="short_url" name="short_url" required>
+
+    <label for="new_url">New Original URL (Optional):</label>
+    <input type="url" id="new_url" name="new_url">
+
+    <label for="new_length">New Short URL Length (Optional):</label>
+    <input type="number" id="new_length" name="new_length" min="4" max="12">
+    
+    <button type="submit">Update URL</button>
+</form>
+<button id="delete-btn">Delete URL</button>
+<div id="manage-result"></div>
+{% endblock %}
+
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form id="shorten-form">
+    <label for="original_url">Enter Your Long URL:</label>
+    <input type="url" id="original_url" name="original_url" required>
+    
+    <label for="length">Preferred Short URL Length:</label>
+    <input type="number" id="length" name="length" min="4" max="12" value="6">
+    
+    <button type="submit">Shorten URL</button>
+</form>
+<div id="result"></div>
+{% endblock %}
+
