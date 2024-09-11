@@ -1,17 +1,20 @@
-
 from sqlalchemy.orm import Session
 from app.models.url import URLModel  # Use SQLAlchemy model
 from app.schemas.url import URLCreate, URLUpdate  # Use Pydantic schemas for validation
 from app.logic.url_shortening import generate_short_url
 
+
 def create_url(db: Session, url_create: URLCreate) -> str:
     short_url = generate_short_url(url_create.length)
-    db_url = URLModel(original_url=url_create.original_url, shortened_url=short_url)  # Use URLModel
+    db_url = URLModel(
+        original_url=str(url_create.original_url),  # Convert Url to string
+        shortened_url=short_url
+    )
     db.add(db_url)
     db.commit()
     db.refresh(db_url)
-    return db_url.shortened_url  # Make sure to return shortened_url
-
+    return db_url.shortened_url
+    
 def update_url(db: Session, short_url: str, url_update: URLUpdate) -> str:
     db_url = db.query(URLModel).filter(URLModel.shortened_url == short_url).first()  # Use URLModel
     if db_url is None:
