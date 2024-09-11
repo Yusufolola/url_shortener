@@ -21,7 +21,8 @@ def read_manage(request: Request):
 @router.post("/shorten/")
 def shorten_url(url_create: URLCreate, db: Session = Depends(get_db)):
     short_url = crud.create_url(db, url_create)
-    return {"shortened_url": short_url}
+    full_shortened_url = f"https://url-shortener-4-2owt.onrender.com/{short_url}"
+    return {"shortened_url": full_shortened_url}
 
 @router.put("/{short_url}")
 def update_url(short_url: str, url_update: URLUpdate, db: Session = Depends(get_db)):
