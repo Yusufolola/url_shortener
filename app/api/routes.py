@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from app.db.session import get_db
-from app.models.url import URLCreate, URLUpdate
+from app.schemas.url import URLCreate, URLUpdate
 from app.db import crud
 
 router = APIRouter()
