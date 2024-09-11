@@ -1,5 +1,5 @@
 from pydantic import BaseModel, AnyHttpUrl
-
+from typing import Optional
 class URLBase(BaseModel):
     original_url: AnyHttpUrl
 
@@ -12,7 +12,7 @@ class URLUpdate(BaseModel):
 
 class URL(URLBase):
     id: int
-    shortened_url: str
+    shortened_url: Optional [str]
 
     class Config:
         orm_mode = True
