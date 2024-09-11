@@ -5,6 +5,14 @@ from app.logic.url_shortening import generate_short_url
 
 
 def create_url(db: Session, url_create: URLCreate) -> str:
+    # Check if the original URL already exists in the database
+    existing_url = db.query(URLModel).filter(URLModel.original_url == str(url_create.original_url)).first()
+    
+    # If the URL exists, return the existing shortened URL
+    if existing_url:
+        return existing_url.shortened_url
+
+    # If the URL does not exist, generate a new shortened URL
     short_url = generate_short_url(url_create.length)
     db_url = URLModel(
         original_url=str(url_create.original_url),  # Convert Url to string
