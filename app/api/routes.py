@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from app.db.session import get_db
 from app.schemas.url import URLCreate, URLUpdate
 from app.db import crud
+from app.models.url import URLModel
 
 router = APIRouter()
 
