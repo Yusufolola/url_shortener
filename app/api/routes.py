@@ -17,7 +17,7 @@ def read_root(request: Request):
 
 @router.get("/manage/", response_class=HTMLResponse)
 def read_manage(request: Request):
-    return templates.TemplateResponse("manage.html", {"request": request, "title": "Manage URLs"})
+    return templates.TemplateResponse("crud.html", {"request": request, "title": "Manage URLs"})
 
 @router.post("/shorten/")
 def shorten_url(url_create: URLCreate, db: Session = Depends(get_db)):
