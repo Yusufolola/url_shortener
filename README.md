@@ -1,6 +1,3 @@
-Here’s a draft of `README.md` for your URL Shortener web app:
-
----
 
  URL Shortener
 
@@ -79,4 +76,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-This `README.md` covers the essentials for potential users or contributors to understand your project and how to interact with it. You can update the placeholder blog link once you publish the article.
+This `README.md` covers the essentials for potential users or contributors to understand the project and how to interact with it.
