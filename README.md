@@ -5,7 +5,7 @@ Introduction
 The URL Shortener web app is designed to convert long, unwieldy URLs into shorter, more manageable versions. This project was built with FastAPI for the backend, PostgreSQL for the database, and deployed on Render. It allows users to generate custom-length shortened URLs and manage them through a user-friendly interface.
 
 - **Deployed Site**: [URL Shortener App](https://url-shortener-4-2owt.onrender.com/)
-- **Blog Article**: [Project Overview Blog](#) (Link to your blog post)
+- **Blog Article**: [Project Overview Blog](#) https://www.linkedin.com/pulse/building-scalable-url-shortener-my-journey-yusuf-oyesanmi-bvkvf
 - **Author**: [Oyesanmi Yusuf](https://www.linkedin.com/in/oyesanmi-yusuf)
 
 ## Installation
